@@ -1,5 +1,7 @@
 import react,{Component} from 'react';
 
+//prueba
+
 class Articuloproducto extends Component{
 
     constructor(props){
