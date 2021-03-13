@@ -1,6 +1,6 @@
 import React from 'react';
 import Articulocategoria from './Articulocategoria';
-import Articuloproducto from './Articuloproducto';
+import ArticuloHook from './ArticuloHook';
 import Maincards from './Maincards'
 import Articulo from './Articulo'
 
@@ -20,8 +20,8 @@ function Section (){
              <Articulo titulo={titulos[1]}>
                  <Articulocategoria/>
              </Articulo>
-             <Articuloproducto titulo ={titulos[0]}>
-             </Articuloproducto>
+             <ArticuloHook titulo ={titulos[0]}>
+             </ArticuloHook>
 
           </div>
 
