@@ -2,7 +2,7 @@ import react,{useState,useEffect} from 'react';
 
 
 
-const ArticuloHook=()=>{
+const Producto=()=>{
   
 const [producto,setProducto]=useState({})//constante mas el estado de la constante
 
@@ -29,13 +29,13 @@ const [producto,setProducto]=useState({})//constante mas el estado de la constan
         return(
             <div className="card-body">
 			    <div className="text-center">
-				<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width:"25rem"}} src={producto.image} alt="/lastproduct"></img>
+				<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width:"25rem"}} src={"http://localhost:3000" + producto.urlImagen} alt="/lastproduct"></img>
 				</div>
 				<p>{producto.description}</p>
-				<a target="_blank" rel="nofollow" href="https://localhost:3000">Detalles del Producto</a>
+				<a target="_blank" rel="nofollow" href={"http://localhost:3000/products/" + producto.id}>Detalles del Producto</a>
 			</div>
             
 
         );
  }
-export default ArticuloHook;
+export default Producto;
