@@ -1,16 +1,19 @@
-import React from 'react';//permite crear interfaces
-import ReactDOM from 'react-dom';//permite crear interfaces entre la web
-import './assets/styles/index.css';// importamos el css con los estilos
+// React modules
+import React from 'react';                          // Permite crear los componentes
+import ReactDOM from 'react-dom';                   // Permite renderizar los componentes en la vista
+import reportWebVitals from './reportWebVitals';    // Permite medir y enviar las métricas de performance del sitio
+
+// Estilos
+import './assets/styles/index.css';
+
+// Components
 import App from './components/App';
-import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
-
-reportWebVitals();
+reportWebVitals(console.log);

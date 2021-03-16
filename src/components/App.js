@@ -1,20 +1,16 @@
+// Estilos
+import '../assets/styles/App.css';
 
-import '../assets/styles/App.css';// importamos el css con los estilos
-import Verticalbar from './Nav/Verticalbar'
-
-import Main from './Main/Main'
-
+// Componentes
+import Main from './Main'
+import Verticalbar from './Verticalbar'
 
 function App() {
-  return (
-
-      
-    <div id="wrapper">
-    <Verticalbar/> 
-      <Main/>
-      
-      </div>
-    
+    return (  
+        <div id="wrapper">
+            <Verticalbar/> 
+            <Main/>
+        </div>
   );
 }
 
