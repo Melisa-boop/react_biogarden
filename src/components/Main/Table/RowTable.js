@@ -2,9 +2,9 @@ function RowTable(props) {
     return (
         <tr>
             <th scope = "row">{ props.row }</th>
-            <td>{ props.name }</td>
+            <td>{ props.title }</td>
             <td>{ props.description }</td>
-            <td>{ props.price }</td>
+            <td>{ "$" + props.price }</td>
             <td>{ props.category }</td>
             <td>{ props.colour }</td>
             <td>{ props.size }</td>

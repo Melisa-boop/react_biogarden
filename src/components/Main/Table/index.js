@@ -1,13 +1,34 @@
+// React
+import react, {useState, useEffect} from 'react';
+
 // Componentes
 import RowTable from './RowTable'
 
-function Table(props) {
+const Table = (props) => {
+    
+    const [productos, setProductos] = useState([]);
+    
+    useEffect(() => {
+        obtenerProductos()
+    }, [])
+    
+    const obtenerProductos = () => {
+        fetch("http://localhost:3000/api/products")
+        .then(response => response.json())
+        .then(json => {
+            setProductos(json.products)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
+    
     return (
         <table className = "table">
             <thead>
                 <tr>
                     <th scope = "col">#</th>
-                    <th scope = "col">Name</th>
+                    <th scope = "col">Title</th>
                     <th scope = "col">Description</th>
                     <th scope = "col">Price</th>
                     <th scope = "col">Category</th>
@@ -17,17 +38,24 @@ function Table(props) {
                 </tr>
             </thead>
             <tbody>
-                <RowTable row = '1' name = 'Suculenta' description = 'Lorem ipsum Lorem ipsum Lorem ipsum' price = '$1000' category = 'Plantas' colour = 'N/A' size = 'S' stock = '10'/>
-                <RowTable row = '2' name = 'Suculenta 2' description = 'Lorem ipsum Lorem ipsum Lorem ipsum' price = '$3000' category = 'Plantas' colour = 'N/A' size = 'L' stock = '15'/>
-                <RowTable row = '3' name = 'Suculenta 3' description = 'Lorem ipsum Lorem ipsum Lorem ipsum' price = '$2000' category = 'Plantas' colour = 'N/A' size = 'M' stock = '20'/>
-                <RowTable row = '4' name = 'Taller de suculentas' description = 'Lorem ipsum Lorem ipsum Lorem ipsum' price = '$5000' category = 'Workshops' colour = 'N/A' size = 'N/A' stock = '15'/>
-                <RowTable row = '5' name = 'Taller de suculentas' description = 'Lorem ipsum Lorem ipsum Lorem ipsum' price = '$5000' category = 'Workshops' colour = 'N/A' size = 'N/A' stock = '15'/>
-                <RowTable row = '6' name = 'Taller de suculentas' description = 'Lorem ipsum Lorem ipsum Lorem ipsum' price = '$5000' category = 'Workshops' colour = 'N/A' size = 'N/A' stock = '15'/>
-                <RowTable row = '7' name = 'Taller de suculentas' description = 'Lorem ipsum Lorem ipsum Lorem ipsum' price = '$5000' category = 'Workshops' colour = 'N/A' size = 'N/A' stock = '15'/>
-                <RowTable row = '8' name = 'Taller de suculentas' description = 'Lorem ipsum Lorem ipsum Lorem ipsum' price = '$5000' category = 'Workshops' colour = 'N/A' size = 'N/A' stock = '15'/>
-                <RowTable row = '9' name = 'Taller de suculentas' description = 'Lorem ipsum Lorem ipsum Lorem ipsum' price = '$5000' category = 'Workshops' colour = 'N/A' size = 'N/A' stock = '15'/>
-                <RowTable row = '10' name = 'Taller de suculentas' description = 'Lorem ipsum Lorem ipsum Lorem ipsum' price = '$5000' category = 'Workshops' colour = 'N/A' size = 'N/A' stock = '15'/>
-                
+            {/* { productos.map((producto) => console.log(producto))} */}
+            {
+                productos.map((producto) => {
+                    return(
+                        <RowTable
+                            key = {producto.id}
+                            row = {producto.id}
+                            title = {producto.title}
+                            description = {producto.description}
+                            price = {producto.price}
+                            category = {producto.categorias.name}
+                            colour = {producto.colores.name}
+                            size = {producto.tamanos.name}
+                            stock = {producto.quantity}
+                        />
+                    )
+                })
+            }
             </tbody>
         </table>
     );

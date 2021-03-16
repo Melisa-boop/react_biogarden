@@ -1,12 +1,11 @@
 // Database
 import datacategoria from '../../database/datacategoria'
-//import datacategoria from '../../database/datacards'
 
 // Componentes
 import Maincards from './Maincards'
 import Articulo from './Articulo'
 import Producto from './Articulo/Producto';
-import Categoria from './Articulo/Categoria';
+import Categorias from './Articulo/Categorias';
 import Table from './Table' 
 
 let titulos = ['Ultimo producto publicado','Categorias']
@@ -23,20 +22,7 @@ function Section (){
                     <Producto/>
                 </Articulo>
                 <Articulo titulo={titulos[1]}>
-                    <div className="card-body">
-                        <div className="row">
-                        {
-                            datacategoria.map((categoria,i)=>{
-                                return(
-                                    <Categoria
-                                        key = {i}
-                                        categoria = {categoria}
-                                    />
-                                )
-                            })
-                        }
-                        </div>
-                    </div>
+                    <Categorias/>
                 </Articulo>
             </div>
             <div className="row">
