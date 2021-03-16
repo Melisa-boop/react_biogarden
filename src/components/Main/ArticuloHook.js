@@ -13,7 +13,7 @@ const [producto,setProducto]=useState({})//constante mas el estado de la constan
 
     },[])//para evitar el bucle infinito
     const obtenerProducto = ()=>{
-         fetch("http://localhost:3000/api/products")
+         fetch("http://localhost:3000/api/products/last")
          .then(response=>response.json())
          .then(json=>setProducto(json))
          
