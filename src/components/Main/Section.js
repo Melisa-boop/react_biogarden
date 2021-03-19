@@ -25,9 +25,7 @@ function Section (){
                     <Categorias/>
                 </Articulo>
             </div>
-            <div className="row">
-                <Table/>
-            </div>
+            <Table/>
         </section>
     )
 
