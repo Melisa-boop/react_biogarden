@@ -17,7 +17,7 @@ function Maincards () {
     }, {})
     
     const obtenerDataProductos = () => {
-        fetch("http://localhost:3000/api/products?page=all")
+        fetch("http://localhost:3030/api/products?page=all")
         .then(response => response.json())
         .then(json => {
             setTotalProducts(json.count)            
@@ -40,7 +40,7 @@ function Maincards () {
     }, {})
     
     const obtenerDataUsers = () => {
-        fetch("http://localhost:3000/api/users")
+        fetch("http://localhost:3030/api/users")
         .then(response => response.json())
         .then(json => {
             setTotalUsers(json.count)
