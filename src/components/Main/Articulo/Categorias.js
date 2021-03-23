@@ -10,7 +10,7 @@ function Categoria (){
     }, [])  //para evitar el bucle infinito
 
     const obtenerCategoria = () => {
-        fetch("http://localhost:3000/api/products")
+        fetch("http://localhost:3030/api/products")
         .then(response => response.json())
         .then(json => {
             setCategorias(json.countByCategory)

@@ -20,7 +20,7 @@ const Table = () => {
     }, [])
     
     const obtenerProductos = () => {
-        fetch("http://localhost:3000/api/products?page=" + pagination.current)
+        fetch("http://localhost:3030/api/products?page=" + pagination.current)
         .then(response => response.json())
         .then(json => {
             setPagination({

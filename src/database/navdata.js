@@ -1,6 +1,6 @@
 const navdata = [
     {
-        href: "http://localhost:3000",
+        href: "http://localhost:3030",
         icono: "fas fa-globe",
         titulo: "Ir a la pagina web",
          
@@ -12,13 +12,13 @@ const navdata = [
          
     },
     {
-        href: "http://localhost:3000",
+        href: "http://localhost:3030",
         icono: "fas fa-fw fa-chart-area",
         titulo: "Informes",
          
     },
     {
-        href: "http://localhost:3000",
+        href: "http://localhost:3030",
         icono: "fas fa-fw fa-table",
         titulo: "Tablas",
     }
